@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CONTACT</title>
+    <meta charset="utf-8">
+    <meta name="description" content="CONTACT">
+    <meta name="keywords" content="CONTACT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- jQuery + Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/combined.min.css" type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="theme" rel="stylesheet" href="css/default.css" type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Lato:400,700,300,100" type='text/css'>
+
+    <style>
+        .success-message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<header class="blockHeader wb-header">
+    <div class="container boxWidget">
+        <div class="logoWidget logo">
+            <a href="index.html"><span id="logoTextWrap"><span class="websiteLogoName" style="font-family:Roboto;font-size:25px">Donatenow</span></span></a>
+        </div>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="navWidget navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li class="active"><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="contact" class="page wb-page">
+    <section class="breadcrumb-section dark sec-padding-lg"
+             style="background-image: url(https://images.pexels.com/photos/6647036/pexels-photo-6647036.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200);background-size: cover;">
+        <div class="container boxWidget">
+            <div class="col-lg-6">
+                <div class="richTextWidget title-heading">
+                    <h1>Contact Us</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="widget-section pt-0">
+        <div class="container boxWidget">
+            <div class="row">
+                <div class="col-sm-8 col-sm-push-2 container-shadow">
+                    <div class="item">
+                        <div class="default-form block-form half-col-input">
+                            <div class="richTextWidget block-title">
+                                <h2>Send us a Message</h2>
+                                <p>Get in touch with us to learn more about our mission and how you can contribute to making a positive impact.</p>
+                            </div>
+
+                            <!-- Contact Form -->
+                            <form id="contactForm">
+                              <label for="name">Name:</label>
+                              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                              <label for="email">Email:</label>
+                              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                              <label for="message">Message:</label>
+                              <textarea id="message" name="message" placeholder="Write your message" rows="5" required></textarea>
+
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+
+                            <!-- Success Message -->
+                            <div class="success-message" id="successMessage">
+                                ✅ Your message has been sent successfully
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Bootstrap Modal -->
+<div id="successModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h4 class="modal-title">Message Sent</h4>
+      </div>
+      <div class="modal-body">
+        <p>✅ Your message has been sent successfully!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="wb-footer theme-dark-color-11">
+    <div class="container boxWidget">
+        <p class="text-center">Copyright 2025 All Rights Reserved</p>
+    </div>
+</footer>
+
+<script>
+    // Contact Form Handler
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Show Bootstrap modal
+        $("#successModal").modal("show");
+
+        // Show inline message too
+        const msg = document.getElementById("successMessage");
+        msg.style.display = "block"; 
+
+        // Clear form fields
+        this.reset();
+
+        // Hide success message after 5 seconds
+        setTimeout(() => { msg.style.display = "none"; }, 5000);
+    });
+</script>
+</body>
+</html>

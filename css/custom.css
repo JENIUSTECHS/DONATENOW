@@ -1,0 +1,45 @@
+/* ===== Responsive Navbar ===== */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide menu items initially */
+        flex-direction: column;
+        background: #222; /* Dark background for mobile menu */
+        position: absolute;
+        top: 60px; /* Height of your navbar */
+        right: 0;
+        width: 200px;
+        padding: 10px 0;
+    }
+
+    nav ul.show {
+        display: flex; /* Show when toggled */
+    }
+
+    nav li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: #fff;
+        font-size: 22px;
+        background: none;
+        border: none;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+}
+
+/* Desktop view keeps normal menu */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    nav ul {
+        display: flex !important;
+    }
+}
